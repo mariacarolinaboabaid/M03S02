@@ -18,7 +18,12 @@ namespace FichaCadastroAPI.Models
         // Criação dos modelos 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            // Declaração do relacionamento FichaModel - DetalheModel
+            modelBuilder.Entity<FichaModel>()
+                        .HasMany(x => x.Detalhes)
+                        .WithOne(y => y.Ficha)
+                        .Metadata
+                        .DeleteBehavior = DeleteBehavior.Restrict;
         }
     }
 }

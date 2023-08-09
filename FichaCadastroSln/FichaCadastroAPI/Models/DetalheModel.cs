@@ -25,6 +25,10 @@ namespace FichaCadastroAPI.Models
 
         [Required]
         public DateTime DataCadastro {get; set; }
+
+        // Relacionamento com FichaModel
+        [Required]
+        public virtual FichaModel Ficha { get; set; }
         
     }
 }
