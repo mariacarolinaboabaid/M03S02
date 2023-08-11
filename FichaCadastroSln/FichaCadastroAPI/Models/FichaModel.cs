@@ -4,16 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using FichaCadastroAPI.Base;
 
 namespace FichaCadastroAPI.Models
 {
     [Table("Ficha")]
-    public class FichaModel
+    public class FichaModel: RelationalBase
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id {get; set; }
-
         [Column(TypeName = "VARCHAR"), Required, StringLength(250)]
         public string Nome {get; set; }
         
@@ -22,9 +19,6 @@ namespace FichaCadastroAPI.Models
 
         [Required]
         public DateTime DataNascimento {get; set; }
-
-        [Required]
-        public DateTime DataCadastro {get; set; }
 
         // Relacionamento com DetalheModel
         public virtual IList<DetalheModel>? Detalhes {get; set; }
