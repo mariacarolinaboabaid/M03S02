@@ -25,8 +25,4 @@ namespace FichaCadastroAPI.Automapper
             CreateMap<DetalheModel, FichaDetalheReadDTO>();
         }
     }
-
-        }
-        
-    }
 }
