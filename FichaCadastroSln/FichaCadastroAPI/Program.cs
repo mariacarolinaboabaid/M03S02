@@ -17,6 +17,7 @@ string connectionString = "Server=localhost;Database=FichaCadastro;Trusted_Conne
 builder.Services.AddDbContext<FichaCadastroContext>(options => options.UseSqlServer(connectionString));
 
 // Configuração do automapper
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 
