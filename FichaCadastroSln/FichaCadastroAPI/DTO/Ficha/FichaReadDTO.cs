@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FichaCadastroAPI.Base;
 using FichaCadastroAPI.Enum;
 
 namespace FichaCadastroAPI.DTO.Ficha
 {
-    public class FichaReadDTO
+    public class FichaReadDTO : DTOBase 
     {
         public string Nome { get; set; }
 
